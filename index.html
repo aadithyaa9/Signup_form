@@ -10,12 +10,82 @@
                 <p class="imgcaption">Nature</p>
             </div>
             <div class="creditdiv">
-                <p class="imgcredit">Photo by <a href="https://unsplash.com/@haliewestphoto" target="_blank">Hailey West</a> on <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                <p class="imgcredit">Photo by <a href="https://unsplash.com/@haliewestphoto" target="_blank">Hailey West</a> 
+                on <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
             </div>
-            
         </div>
         <div class="textpart">
-
+            <div class="randomtext">
+                <p>This is not a real online service! You need to know something like this in your life to help you realize yor deepest dreams.
+                Sign up now to get started.
+                    <br>
+                    <br>
+                You know you want to.
+                </p>
+            </div>
+            <div class="formsection">
+                <p>Here we go!</p>
+                <form action="https://httpbin.org/post" method="post" id="myform">
+                    <div class="rowone">
+                        <div class="firstname"> 
+                            <div> 
+                                <label for="first_nameinput">First Name</label>
+                            </div>
+                            <div> 
+                                <input type="text" id="first_nameinput" name="first_name" required>
+                            </div>
+                        </div>
+                        <div class= lastname>
+                            <div>
+                                <label for="last_nameinput">Last Name</label>
+                            </div>
+                            <div>
+                                <input type="text" id="last_nameinput" name="last_name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowtwo">
+                        <div class="emailid"> 
+                            <div> 
+                                <label for="email">Email</label>
+                            </div>
+                            <div> 
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class= phonenumber>
+                            <div>
+                                <label for="number">Phone</label>
+                            </div>
+                            <div>
+                                <input type="tel" id="number" name="phone" min="0" minlength="10" maxlength="10" title="Please enter digits and not alphabets." required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowthree">
+                        <div class="pwd"> 
+                            <div> 
+                                <label for="password">Password</label>
+                            </div>
+                            <div> 
+                                <input type="password" id="password" name="pass" required>
+                            </div>
+                        </div>
+                        <div class= pwdconfirm>
+                            <div>
+                                <label for="passwordconfirm">Confirm Password</label>
+                            </div>
+                            <div>
+                                <input type="password" id="passwordconfirm" name="passwordcon" required>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="footer">
+                <button type="submit" form="myform">Submit</button>
+                <p>Already have an account <a href="#">Log in</a></p>
+            </div>
         </div>
     </body>
 </html>
