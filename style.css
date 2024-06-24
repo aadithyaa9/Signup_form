@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+.imagediv{
+    height: 100vh;
+    background-image:url(./img.jpg);
+    background-size:cover;
+    width: 35vw;
+}
+
+.textpart{
+    height: 100vh;
+    background-color:beige;
+    width: 65vw;
+}
+
+.captiondiv{
+    background-color: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 300px;
+    width:inherit;
+    text-align: center;
+}
+
+.imgcaption{
+    color: white;
+    font-size: 60px;
+}
