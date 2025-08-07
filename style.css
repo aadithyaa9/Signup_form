@@ -1,188 +1,167 @@
-/* Using CSS variables for easier color and font management */
-:root {
-    --primary-bg-color: #c7c7b0;
-    --form-bg-color: rgba(192, 191, 191, 0.65);
-    --image-caption-bg: rgba(0, 0, 0, 0.7);
-    --text-color: #000;
-    --light-text-color: #fff;
-    --button-bg-color: rgb(55, 128, 0);
-    --button-hover-bg: rgb(31, 70, 2);
-    --link-color: green;
-    --focus-outline-color: rgba(23, 104, 129, 0.5);
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Better box model for easier sizing */
-}
-
+/* General body styling */
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
     display: flex;
-    flex-direction: row;
-    font-family: var(--font-family);
-    line-height: 1.6;
-    background-color: var(--primary-bg-color);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
-/* --- Image Section --- */
-.image-section {
-    width: 40vw;
-    height: 100vh;
-    background-image: url('https://via.placeholder.com/800x1200'); /* Placeholder image */
-    background-size: cover;
-    background-position: center;
-    position: relative; /* For positioning child elements */
+/* Main container for the two parts */
+.container {
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center caption vertically */
-    color: var(--light-text-color);
+    max-width: 1200px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.caption-container {
-    background-color: var(--image-caption-bg);
+/* Image section styling */
+.imagediv {
+    position: relative;
+    flex: 1;
+}
+
+.imagediv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.captiondiv {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
     text-align: center;
-    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
 }
 
-.image-caption {
-    font-size: 3rem; /* Use rem for scalable font sizes */
+.imgcaption {
+    color: #fff;
+    margin: 0;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-.credit-container {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-.credit-container a {
-    color: var(--light-text-color);
-    /* text-decoration is fine as default */
-}
-
-/* --- Content & Form Section --- */
-.content-section {
-    width: 60vw;
+/* Text and form section styling */
+.textpart {
+    flex: 1.5;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the content */
-    padding: 2rem 4rem; /* Use rem for scalable padding */
+    justify-content: center;
 }
 
-.intro-text p {
-    font-size: 1.5rem;
-    max-width: 800px; /* Use max-width for responsiveness */
-    margin-bottom: 2rem;
+.randomtext p, .formsection p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
 }
 
-.form-section {
-    background-color: var(--form-bg-color);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 50px 0px;
-    border-radius: 8px;
-    padding: 2rem;
+.formsection p {
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.form-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+/* Form layout and styling */
+#myform {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Using CSS Grid for a more robust form layout */
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 1.5rem; /* Space between grid items */
+.rowone, .rowtwo, .rowthree {
+    display: flex;
+    gap: 20px;
 }
 
-.form-field {
+.firstname, .lastname, .emailid, .phonenumber, .pwd, .pwdconfirm {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.form-field label {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    font-weight: 600;
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #444;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="password"],
-input[type="number"] {
-    border-radius: 5px;
-    height: 40px;
-    border: 2px solid var(--text-color);
-    padding: 0 10px;
-    font-size: 1rem;
-    width: 100%; /* Make input fill the grid cell */
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* To include padding and border in the element's total width and height */
+    font-size: 1em;
 }
 
 input:focus {
+    border-color: #007bff;
     outline: none;
-    border-color: transparent;
-    box-shadow: 0 0 0 4px var(--focus-outline-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-
-/* --- Footer/Submission Section --- */
-.submission-area {
-    margin-top: 2rem;
+/* Footer and button styling */
+.footer {
+    margin-top: 30px;
 }
 
-button {
-    font-size: 1.1rem;
-    padding: 12px 8px;
-    width: 180px;
-    margin-bottom: 1rem;
-    border-radius: 8px;
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 20px;
     border: none;
-    color: var(--light-text-color);
-    background-color: var(--button-bg-color);
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-button:hover {
-    background-color: var(--button-hover-bg);
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
-.login-prompt p {
-    font-size: 1.1rem;
+.footer p {
+    text-align: center;
+    font-size: 0.9em;
 }
 
-.login-prompt a {
-    color: var(--link-color);
+.footer a {
+    color: #007bff;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* --- Responsive Design for smaller screens --- */
-@media (max-width: 900px) {
-    body {
-        flex-direction: column; /* Stack sections vertically */
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
     }
 
-    .image-section,
-    .content-section {
-        width: 100%;
-    }
-    
-    .image-section {
-        height: 40vh; /* Reduce height on mobile */
+    .textpart {
+        padding: 20px;
     }
 
-    .content-section {
-        height: auto;
-        padding: 2rem;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr; /* Single column layout for form */
+    .rowone, .rowtwo, .rowthree {
+        flex-direction: column;
+        gap: 15px;
     }
 }
